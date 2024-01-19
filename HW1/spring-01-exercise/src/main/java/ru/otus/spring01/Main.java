@@ -7,10 +7,10 @@ import ru.otus.spring01.service.PersonService;
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/spring-context.xml");
         PersonService s = context.getBean(PersonService.class);
-        s.getPerson();
-//        Person ivan = null;
-//        System.out.println("name: " + ivan.getName() + " age: " + ivan.getAge());
+
+       Person ivan = s.getByName("Ivan");
+       System.out.println("name: " + ivan.getName() + " age: " + ivan.getAge());
     }
 }
